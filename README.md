@@ -22,4 +22,4 @@ python3 manage.py migrate
 
 [For creating new migrations based on the changes you have made to your models]
 
-python3 manage.py makemigrations control laboral
+python3 manage.py makemigrations controllaboral
