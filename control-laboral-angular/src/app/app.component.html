@@ -29,9 +29,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>a</td>
+            <tr *ngFor='let user of users'>
+              <th scope="row">#</th>
+              <td>{{user.name.first}}</td>
               <td>a</td>
               <td>a</td>
             </tr>
