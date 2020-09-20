@@ -47,3 +47,13 @@
 [Creating the workspace]
 
     ng new control-laboral-angular
+
+[Run the application]
+
+    cd control-laboral-angular
+    
+    ng serve --open
+
+[Creating the service]
+
+ng generate service user
