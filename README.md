@@ -1,4 +1,4 @@
-# control_laboral_django
+# Django
 
 [Install the lastest official release of Django]
 
@@ -23,3 +23,21 @@ python3 manage.py migrate
 [For creating new migrations based on the changes you have made to your models]
 
 python3 manage.py makemigrations controllaboral
+
+[Working with secret key]
+
+Create a new file secrets.py or what have you and put the secret key in that. Place it alongside your settings file and place everything secret in there; then in your settings file put from secrets import * at the top. Then add a .gitignore file and add secrets.py to this file so that it won't be committed.
+
+[Create super user]
+
+python3 manage.py createsuperuser
+
+# Django Rest Framework
+
+[Installation]
+
+pip install djangorestframework
+
+# Angular
+
+
