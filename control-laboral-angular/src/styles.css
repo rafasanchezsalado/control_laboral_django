@@ -12,12 +12,28 @@
     font-family: 'Poppins';
 }
 
+body {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {}
+::-webkit-scrollbar-button {}
+::-webkit-scrollbar-thumb {}
+::-webkit-scrollbar-track {}
+::-webkit-scrollbar-track-piece {}
+::-webkit-scrollbar-corner {}
+::-webkit-resizer {}
+
 .container-fluid {
     height: 100vh !important;
 }
 
 a { 
     color: inherit !important;
+}
+
+a:hover {
+
 }
 
 .logo {
@@ -28,4 +44,8 @@ a {
 .sidebar-icon{
     width: 14px;
     height: 14px;
+}
+
+.bg-red{
+    background-color: #BC2C3D;
 }
