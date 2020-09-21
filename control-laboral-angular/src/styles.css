@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* 
+#2C2627
+#BC2C3D
+#777
+*/
+
+* {
+    margin: none auto;
+    padding: none auto;
+    font-family: 'Poppins';
+}
+
+.container-fluid {
+    height: 100vh !important;
+}
+
+a { 
+    color: inherit !important;
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+}
+
+.sidebar-icon{
+    width: 14px;
+    height: 14px;
+}
