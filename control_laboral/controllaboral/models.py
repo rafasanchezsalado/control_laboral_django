@@ -6,3 +6,6 @@ class Employee(models.Model):
     nif = models.CharField(max_length=9)
     date_birth = models.DateField()
     email = models.EmailField(max_length=254, null=True)
+
+    def __str__(self):
+        return self.name

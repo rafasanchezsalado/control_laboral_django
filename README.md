@@ -78,3 +78,34 @@ ng serve --open
 ## Creating the service
 
 ng generate service user
+
+## Using material icons
+
+npm install material-design-icons
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<i class="material-icons align-middle">x</i>
+
+### Changing sizes
+
+#### CSS
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+#### Code
+
+<i class="material-icons md-18">face</i>
+<i class="material-icons md-24">face</i>
+<i class="material-icons md-36">face</i>
+<i class="material-icons md-48">face</i>
+
+Example for drawing an icon on a light background with a dark foreground color:
+
+<i class="material-icons md-dark">face</i>
+<i class="material-icons md-dark md-inactive">face</i>
+<i class="material-icons md-light">face</i>
+<i class="material-icons md-light md-inactive">face</i>
