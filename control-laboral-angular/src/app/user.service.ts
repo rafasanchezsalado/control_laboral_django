@@ -11,4 +11,8 @@ export class UserService {
   getUsers() {
     return this.http.get('https://randomuser.me/api/?results=5');
   }
+
+  getEmployees() {
+    return this.http.get('http://127.0.0.1:8000/api/employees/');
+  }
 }
