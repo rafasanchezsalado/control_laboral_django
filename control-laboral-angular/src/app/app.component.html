@@ -1,22 +1,29 @@
 <div class="container-fluid p-0 m-0">
+
   <nav class="sidebar-nav w-25 h-100 d-inline-flex justify-content-center border-right text-white bg-red">
-    <ul class="list-group list-group-flush text-center">
-      <!-- <h3 class="list-group-item bg-red m-0 p-5 text-center border-bottom"><img class="img-fluid logo" src="../assets/svg/lab.svg">&nbsp;<strong>WorkLab</strong></h3> -->
-      <h1 class="list-group-item bg-red m-0 p-5 text-center border-bottom font-weight-bold">
-        <i class="material-icons md-36 align-middle">science</i>WorkLab
+    <ul class="list-group list-group-flush">
+      <h1 class="list-group-item bg-red m-0 p-5 mb-4 text-center border-bottom font-weight-bold">
+        <!-- <i class="material-icons md-36 align-middle">science</i> -->
+        worklab
       </h1>
-      <a class="list-group-item bg-red m-0 p-5 border-0"><i
-          class="material-icons align-middle">dashboard</i>&nbsp;Dashboard</a>
-      <a class="list-group-item bg-red m-0 p-5 border-0"><i
-          class="material-icons align-middle">people_alt</i>&nbsp;Employees</a>
-      <a class="list-group-item-light bg-red m-0 p-5 border-0"><i
-          class="material-icons align-middle">settings</i>&nbsp;Settings</a>
+      <a class="list-group-item bg-red m-0 p-5 ml-4 border-0">
+        <i class="material-icons align-middle">dashboard</i>
+        &nbsp;Dashboard
+      </a>
+      <a class="list-group-item bg-red m-0 p-5 ml-4 border-0">
+        <i class="material-icons align-middle">people_alt</i>
+        &nbsp;Employees
+      </a>
+      <a class="list-group-item-light bg-red m-0 p-5 ml-4 border-0">
+        <i class="material-icons align-middle">settings</i>
+        &nbsp;Settings
+      </a>
     </ul>
   </nav>
 
   <div class="content w-75 h-100 ml-auto d-inline-block bg-light">
     <div class="row">
-      <div class="col p-0">
+      <div class="col">
         <nav class="navbar navbar-expand-lg navbar-light px-5 py-3 shadow-sm bg-white">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +45,34 @@
               </form>
             </div>
             <div class="d-flex align-items-center ml-auto">
-              <i class="material-icons md-24 align-middle text-muted px-4">notifications</i>
-              <i class="material-icons md-48 align-middle text-muted px-4">account_circle</i>
+              <div class="nav-item dropdown">
+                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="material-icons md-24 align-middle text-muted px-4">notifications</i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="">Notification example</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </div>
+              <div class="nav-item dropdown">
+                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="material-icons md-48 align-middle text-muted px-4">account_circle</i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="">My Profile</a>
+                  <div class="dropdown-item custom-control custom-switch text-center">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Dark Mode</label>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="">Log Out</a>
+                </div>
+              </div>
             </div>
           </div>
+
         </nav>
       </div>
 
@@ -65,7 +96,7 @@
               </tr>
             </thead>
             <tbody>
-<!--               <tr *ngFor="let user of users">
+              <!-- <tr *ngFor="let user of users">
                 <th scope="row">#</th>
                 <td>{{ user.name.first }}</td>
                 <td>a</td>
@@ -78,11 +109,12 @@
                 <td>{{ employee.nif }}</td>
                 <td>{{ employee.date_birth }}</td>
                 <td>{{ employee.email }}</td>
-              </tr> 
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
+
 </div>

@@ -8,30 +8,31 @@ import { UserService } from './user.service';
 })
 export class AppComponent implements OnInit {
   title = 'Control Laboral';
-  employees: any[] = [];
+  employees: any = [];
   // users: any[] = [];
 
-   constructor(
+  constructor(
     protected userService: UserService
   ) {
-  } 
+  }
 
-/*   ngOnInit() {
-    this.userService.getUsers()
-      .subscribe(
-        (data) => {
-          this.users = data['results'];
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
-  } */
+  /* ngOnInit() {
+      this.userService.getUsers()
+        .subscribe(
+          (data) => {
+            this.users = data['results'];
+          },
+          (error) => {
+            console.error(error);
+          }
+        );
+    } */
+
   ngOnInit() {
     this.userService.getEmployees()
       .subscribe(
         (data) => {
-          this.employees = data['employees'];
+          this.employees = data;
         },
         (error) => {
           console.error(error);
