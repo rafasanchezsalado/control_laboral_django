@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service';
+import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-employees',
+  templateUrl: './employees.component.html',
+  styleUrls: ['./employees.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class EmployeesComponent implements OnInit {
+
   title = 'Control Laboral';
   employees: any = [];
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 
@@ -13,11 +13,12 @@
 * {
     margin: none auto;
     padding: none auto;
-    font-family: 'Poppins';
+    font-family: 'Ubuntu';
 }
 
 body {
     overflow-x: hidden;
+    height: 100vh !important;
 }
 
 /* ::-webkit-scrollbar {}
@@ -27,6 +28,15 @@ body {
 ::-webkit-scrollbar-track-piece {}
 ::-webkit-scrollbar-corner {}
 ::-webkit-resizer {} */
+
+.noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  }
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -59,12 +69,24 @@ a {
     background-color: #FEFEFE !important;
 }
 
+.bg-grey {
+    background-color: #999999 !important;
+}
+
+.bg-black {
+    background-color: #2C2627 !important;
+}
+
 .text-black {
     color: #2C2627;
 }
 
-.text-red{
+.text-red {
     color: #BC2C3D;
+}
+
+.text-grey {
+    color: #999999;
 }
 
 h1 {
@@ -73,4 +95,8 @@ h1 {
 
 li {
     list-style-type: none !important;
+}
+
+.list-group-item.active {
+    background-color: transparent !important;
 }
