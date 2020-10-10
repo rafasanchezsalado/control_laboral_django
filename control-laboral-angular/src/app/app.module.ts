@@ -3,21 +3,25 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 
 import { UserService } from './user.service';
 
-// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { SchedulesComponent } from './schedules/schedules.component';
+import { HolidaysComponent } from './holidays/holidays.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'employees', component: EmployeesComponent },
+  { path: 'schedules', component: SchedulesComponent },
+  { path: 'holidays', component: HolidaysComponent },
   { path: 'settings', component: SettingsComponent },
   // { path: '**', component: PageNotFoundComponent },
 ];
@@ -28,13 +32,15 @@ const routes: Routes = [
     LoginComponent,
     HomeComponent,
     EmployeesComponent,
-    SettingsComponent
+    SchedulesComponent,
+    HolidaysComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    // AppRoutingModule,
     CommonModule,
+    MatTableModule,
     RouterModule.forRoot(routes),
   ],
   exports: [RouterModule],

@@ -79,6 +79,12 @@ ng serve --open
 
 ng generate service user
 
+## Install materials from Angular
+
+npm install --save @angular/material
+
+npm install --save @angular/cdk
+
 ## Using material icons
 
 npm install material-design-icons
