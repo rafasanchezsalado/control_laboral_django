@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
 
 export class EmployeesComponent implements OnInit {
 
-  title = 'Control Laboral';
+  title = 'Employees';
   employees: any = [];
 
   constructor(

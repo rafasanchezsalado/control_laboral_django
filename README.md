@@ -36,7 +36,7 @@ python3 manage.py createsuperuser
 
 ### Adding CORS headers allows your resources to be accessed on other domains. It’s important you understand the implications before adding the headers, since you could be unintentionally opening up your site’s private data to others.
 
-### 'python3 -m pip install django-cors-headers'
+python3 -m pip install django-cors-headers
 
     INSTALLED_APPS = [
     ...
@@ -81,9 +81,9 @@ ng generate service user
 
 ## Install materials from Angular
 
-npm install --save @angular/material
+sudo npm install --save @angular/material
 
-npm install --save @angular/cdk
+sudo npm install --save @angular/cdk
 
 ## Using material icons
 
