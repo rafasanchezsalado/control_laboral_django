@@ -8,6 +8,7 @@ class User(models.Model):
     def __str__(self):
         return self.username
 
+
 class Employee(models.Model):
     name = models.CharField(max_length=128)
     nif = models.CharField(max_length=9)
@@ -20,6 +21,7 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Holiday(models.Model):
     name = models.CharField(max_length=128)

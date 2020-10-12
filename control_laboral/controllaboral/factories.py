@@ -10,6 +10,7 @@ class UserFactory(factory.django.DjangoModelFactory):
     username = "fake_username"
     password = "fake_password"
 
+
 class EmployeeFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.Employee
@@ -23,6 +24,7 @@ class EmployeeFactory(factory.django.DjangoModelFactory):
     contract = "1984-01-01"
     department = "IT"
     """
+
 
 class HolidayFactory(factory.django.DjangoModelFactory):
     class Meta:

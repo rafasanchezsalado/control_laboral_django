@@ -6,24 +6,40 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('controllaboral', '0002_auto_20200920_2259'),
+        ("controllaboral", "0002_auto_20200920_2259"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Holiday',
+            name="Holiday",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=128)),
-                ('date', models.DateField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=128)),
+                ("date", models.DateField()),
             ],
         ),
         migrations.CreateModel(
-            name='User',
+            name="User",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(max_length=64)),
-                ('password', models.CharField(max_length=64)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("username", models.CharField(max_length=64)),
+                ("password", models.CharField(max_length=64)),
             ],
         ),
     ]
