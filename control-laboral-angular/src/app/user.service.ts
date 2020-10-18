@@ -10,16 +10,20 @@ export class UserService {
 
   constructor(protected http: HttpClient) { }
 
-  getUsers() {
-    return this.http.get(this.base_url + 'users/');
+  get(model) {
+    return this.http.get(this.base_url + "" + model + "/");
   }
 
-  getEmployees() {
-    return this.http.get(this.base_url + 'employees/');
+  create(model, data) {
+    return this.http.post(this.base_url + "" + model + "/", data);
   }
 
-  getHolidays() {
-    return this.http.get(this.base_url + 'holidays/');
+  update(id, data) {
+    return this.http.put(this.base_url + id, data);
+  }
+
+  delete() {
+    return this.http.delete(this.base_url + 'employees/3/');
   }
 
 }

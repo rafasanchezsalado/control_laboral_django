@@ -1,49 +1,137 @@
-<div class="container-fluid p-0 m-0 d-flex align-items-center bg-light">
+<div class="container-fluid p-0 m-0 d-flex align-items-center bg-offwhite background">
 
-    <div class="card p-5 text-center w-50 mx-auto rounded-lg shadow">
+    <mat-card class="p-5 text-center w-25 mx-auto rounded-lg shadow">
 
         <form method="POST">
-            <!-- {% csrf_token %} -->
+
             <div class="row">
-                <div class="col-12 my-4">
-                    <h3 class="font-weight-bold">Login</h3>
-                </div>
+
                 <div class="col-12">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input class="form-control rounded-pill bg-transparent pr-5" type="text" placeholder="User"
-                                aria-label="Username" />
-                            <div class="input-group-append">
-                                <span class="input-group-text border-0 bg-transparent ml-n5 text-muted">
-                                    <i class="material-icons md-18 align-middle">person</i>
-                                </span>
+
+                    <h1 class="h1 py-5 w-100 mx-auto text-center font-weight-bold noselect text-red">
+                        worklab
+                    </h1>
+
+                    <mat-tab-group mat-align-tabs="center">
+
+                        <mat-tab label="Login">
+
+                            <div class="row w-100 pt-5">
+
+                                <div class="col-12">
+
+                                    <div class="form-group">
+
+                                        <mat-form-field class="w-100" appearance="outline">
+                                            <mat-label>Enter your username</mat-label>
+                                            <input matInput placeholder="Username" required>
+                                            <mat-icon matSuffix class="text-grey align-middle">person</mat-icon>
+                                        </mat-form-field>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <div class="form-group">
+
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Enter your password</mat-label>
+                                            <input matInput [type]="!hide ? 'password' : 'text'" placeholder="Password">
+                                            <mat-icon matSuffix class="text-grey align-middle">lock</mat-icon>
+                                            <!--
+                                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                                [attr.aria-pressed]="hide">
+                                                <mat-icon matSuffix>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                                </button> 
+                                            -->
+                                        </mat-form-field>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <a type="submit"
+                                        class="btn btn-lg btn-dark w-100 text-white rounded-pill bg-black align-middle"
+                                        routerLink="/home" (click)="loginUser()" routerLinkActive="router-link-active">
+                                        Login
+                                    </a>
+
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input class="form-control rounded-pill bg-transparent pr-5" type="password"
-                                placeholder="Password" aria-label="Password" />
-                            <div class="input-group-append">
-                                <span class="input-group-text border-0 bg-transparent ml-n5 text-muted">
-                                    <i class="material-icons md-18 align-middle">lock</i>
-                                </span>
+
+                        </mat-tab>
+
+                        <mat-tab label="Register">
+
+                            <div class="row w-100 pt-5">
+
+                                <div class="col-12">
+
+                                    <div class="form-group">
+
+                                        <mat-form-field class="w-100" appearance="outline">
+                                            <mat-label>Enter your username</mat-label>
+                                            <input matInput placeholder="Username">
+                                            <mat-icon matSuffix class="text-grey align-middle">person</mat-icon>
+                                        </mat-form-field>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <div class="form-group">
+
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Enter your password</mat-label>
+                                            <input matInput [type]="!hide ? 'password' : 'text'" placeholder="Password">
+                                            <mat-icon matSuffix class="text-grey align-middle">lock</mat-icon>
+                                            <!--
+                                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                                [attr.aria-pressed]="hide">
+                                                <mat-icon matSuffix>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                                </button> 
+                                            -->
+                                        </mat-form-field>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <!--    <a type="submit"
+                                        class="btn btn-lg btn-dark w-100 text-white rounded-pill bg-black align-middle"
+                                        routerLink="/home" (click)="createUser(data)"
+                                        routerLinkActive="router-link-active">
+                                        Register
+                                    </a> -->
+                                    <a type="submit"
+                                        class="btn btn-lg btn-dark w-100 text-white rounded-pill bg-black align-middle"
+                                        routerLink="/home" routerLinkActive="router-link-active">
+                                        Register
+                                    </a>
+
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
+
+                        </mat-tab>
+
+                    </mat-tab-group>
+
                 </div>
-                <div class="col-6">
-                    <a class="font-weight-bold align-middle text-red">Register here</a>
-                </div>
-                <div class="col-6">
-                    <a type="submit" class="btn btn-lg btn-dark w-100 text-white rounded-pill bg-black align-middle"
-                        routerLink="/home" routerLinkActive="router-link-active">Login</a>
-                </div>
+
             </div>
+
         </form>
 
-    </div>
+    </mat-card>
 
 </div>
