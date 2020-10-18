@@ -1,1 +1,124 @@
-<p>holidays works!</p>
+<div class="container-fluid p-0 m-0">
+
+    <mat-drawer-container class="main-container">
+
+        <mat-drawer-content class="bg-light">
+
+            <!--  TOOLBAR (NAVBAR) -->
+
+            <mat-toolbar class="bg-black shadow-sm p-4">
+
+                <div class="ml-auto">
+
+                    <button mat-icon-button class="mx-4" aria-label="" [matMenuTriggerFor]="notificationMenu"
+                        xPosition="before" #tooltip="matTooltip" matTooltip="Notifications" aria-label="">
+                        <mat-icon class="text-light align-middle" matBadge="5" matBadgeColor="warn">notifications
+                        </mat-icon>
+                    </button>
+
+                    <mat-menu #notificationMenu="matMenu">
+                        <button mat-menu-item>Item 1</button>
+                    </mat-menu>
+
+                    <button mat-icon-button class="mx-4" aria-label="" [matMenuTriggerFor]="profileMenu"
+                        xPosition="before">
+                        <mat-icon class="text-light align-middle">person</mat-icon>
+                    </button>
+
+                    <mat-menu #profileMenu="matMenu">
+                        <button mat-menu-item>Item 1</button>
+                        <mat-slide-toggle mat-mat-menu-item class="mx-2">
+                            Dark Mode
+                            <mat-icon class="text-black align-middle">
+                                brightness_2
+                            </mat-icon>
+                        </mat-slide-toggle>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item>Log out</button>
+                    </mat-menu>
+
+                </div>
+
+            </mat-toolbar>
+
+            <!--  TABS -->
+
+            <div>
+
+                <div class="row">
+
+                    <div class="col-12 text-black shadow-sm">
+
+                        <mat-tab-group mat-align-tabs="start" class="bg-white">
+
+                            <!--  TAB 1 -->
+
+                            <mat-tab label="Employees Holidays">
+
+                            </mat-tab>
+
+                            <!--  TAB 2 -->
+
+                            <mat-tab label="National Holidays">
+
+                                <div class="row p-5 w-100 bg-offwhite">
+
+                                    <div class="col-12">
+
+                                        <mat-card class="p-5 w-100 ounded-lg shadow">
+
+                                            <mat-form-field class="example-full-width w-100" appearance="outline">
+                                                <mat-label>Choose a date</mat-label>
+                                                <input matInput [matDatepicker]="picker">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+                                            </mat-form-field>
+
+                                            <table mat-table [dataSource]="nationalHolidays"
+                                                class="mat-elevation-z8 w-100 shadow rounded-lg">
+
+                                                <!-- Position Column -->
+                                                <ng-container matColumnDef="position">
+                                                    <th mat-header-cell *matHeaderCellDef>#</th>
+                                                    <td mat-cell *matCellDef="let nh"> {{nh.position}} </td>
+                                                </ng-container>
+
+                                                <!-- Name Column -->
+                                                <ng-container matColumnDef="name">
+                                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                                    <td mat-cell *matCellDef="let nh"> {{nh.name}} </td>
+                                                </ng-container>
+
+                                                <!-- Date Column -->
+                                                <ng-container matColumnDef="date">
+                                                    <th mat-header-cell *matHeaderCellDef>Date</th>
+                                                    <td mat-cell *matCellDef="let nh"> {{nh.date}} </td>
+                                                </ng-container>
+
+                                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                            </table>
+
+                                            <mat-paginator class="w-100 shadow" [length]="11" [pageSize]="5" showFirstLastButtons></mat-paginator>
+
+                                        </mat-card>
+
+                                    </div>
+
+                                </div>
+
+                            </mat-tab>
+
+                        </mat-tab-group>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </mat-drawer-content>
+
+    </mat-drawer-container>
+
+</div>

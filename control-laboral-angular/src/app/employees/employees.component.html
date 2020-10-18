@@ -1,28 +1,329 @@
 <div class="container-fluid p-0 m-0">
 
-  <nav class="sidebar-nav w-25 h-100 d-inline-flex justify-content-center border-right text-white bg-red">
-    <ul class="list-group list-group-flush">
-      <h1 class="list-group-item bg-red m-0 p-5 mb-4 text-center border-bottom font-weight-bold noselect">
+  <mat-drawer-container class="main-container">
+
+    <!--  SIDE NAVBAR -->
+
+    <mat-drawer class="bg-red text-white shadow-sm" mode="side" opened>
+      <h1 class="h1 py-5 w-75 mx-auto text-center border-bottom font-weight-bold noselect">
         worklab
       </h1>
-      <a class="list-group-item bg-red m-0 p-5 mx-auto border-0" routerLink="/home" routerLinkActive="active">
-        <i class="material-icons align-middle mr-2">dashboard</i>Home
-      </a>
-      <a class="list-group-item bg-red m-0 p-5 mx-auto border-0" routerLink="/employees" routerLinkActive="active">
-        <i class="material-icons align-middle mr-2">people</i>Employees
-      </a>
-      <a class="list-group-item bg-red m-0 p-5 mx-auto border-0" routerLink="/schedules" routerLinkActive="active">
-        <i class="material-icons align-middle mr-2">schedule</i>Schedules
-      </a>
-      <a class="list-group-item bg-red m-0 p-5 mx-auto border-0" routerLink="/holidays" routerLinkActive="active">
-        <i class="material-icons align-middle mr-2">event</i>Holidays
-      </a>
-      <a class="list-group-item-light bg-red m-0 p-5 mx-auto border-0" routerLink="/settings" routerLinkActive="active">
-        <i class="material-icons align-middle mr-2">settings</i>Settings
-      </a>
-    </ul>
-  </nav>
+<!--       <ul
+        class="list-group list-group-flush bg-red text-center h-75 d-flex justify-content-center align-content-center">
+        <a class="list-group-item" routerLink="/home" routerLinkActive="active">
+          <mat-icon class="align-middle" aria-hidden="false" aria-label="dashboard">dashboard</mat-icon>
+          Home
+        </a>
+        <a class="list-group-item" routerLink="/employees" routerLinkActive="active">
+          <mat-icon class="align-middle" aria-hidden="false" aria-label="people">people</mat-icon>
+          Employees
+        </a>
+        <a class="list-group-item" routerLink="/schedules" routerLinkActive="active">
+          <mat-icon class="align-middle" aria-hidden="false" aria-label="schedule">schedule</mat-icon>
+          Schedules
+        </a>
+        <a class="list-group-item" routerLink="/holidays" routerLinkActive="active">
+          <mat-icon class="align-middle" aria-hidden="false" aria-label="event">event</mat-icon>
+          Holidays
+        </a>
+        <a class="list-group-item" routerLink="/settings" routerLinkActive="active">
+          <mat-icon class="align-middle" aria-hidden="false" aria-label="settings">settings</mat-icon>
+          Settings
+        </a>
+      </ul> -->
+      <mat-list class="list bg-red">
+        <mat-list-item role="list-item" class="list-group-item" routerLink="/home" routerLinkActive="active">
+          <mat-icon class="align-middle mr-1" aria-hidden="false" aria-label="dashboard">dashboard</mat-icon>
+          Home
+        </mat-list-item>
+        <mat-list-item role="list-item" class="list-group-item" routerLink="/employees" routerLinkActive="active">
+          <mat-icon class="align-middle mr-1" aria-hidden="false" aria-label="people">people</mat-icon>
+          Employees
+        </mat-list-item>
+        <mat-list-item role="list-item" class="list-group-item" routerLink="/schedules" routerLinkActive="active">
+          <mat-icon class="align-middle mr-1" aria-hidden="false" aria-label="schedule">schedule</mat-icon>
+          Schedules
+        </mat-list-item>
+        <mat-list-item role="list-item" class="list-group-item" routerLink="/holidays" routerLinkActive="active">
+          <mat-icon class="align-middle mr-1" aria-hidden="false" aria-label="event">event</mat-icon>
+          Holidays
+        </mat-list-item>
+        <mat-list-item role="list-item" class="list-group-item" routerLink="/settings" routerLinkActive="active">
+          <mat-icon class="align-middle mr-1" aria-hidden="false" aria-label="settings">settings</mat-icon>
+          Settings
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
 
+    <mat-drawer-content class="bg-light">
+
+      <!--  CONTENT -->
+
+      <!--  TOOLBAR (NAVBAR) -->
+
+      <mat-toolbar class="bg-black shadow-sm p-4">
+
+        <div class="ml-auto">
+
+          <button mat-icon-button class="mx-4" aria-label="" [matMenuTriggerFor]="notificationMenu" xPosition="before"
+            #tooltip="matTooltip" matTooltip="Notifications" aria-label="">
+            <mat-icon class="text-light align-middle" matBadge="5" matBadgeColor="warn">notifications</mat-icon>
+          </button>
+
+          <mat-menu #notificationMenu="matMenu">
+            <button mat-menu-item>Item 1</button>
+          </mat-menu>
+
+          <button mat-icon-button class="mx-4" aria-label="" [matMenuTriggerFor]="profileMenu" xPosition="before">
+            <mat-icon class="text-light align-middle">person</mat-icon>
+          </button>
+
+          <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <mat-slide-toggle mat-mat-menu-item class="mx-2">
+              Dark Mode
+              <mat-icon class="text-black align-middle">
+                brightness_2
+              </mat-icon>
+            </mat-slide-toggle>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>Log out</button>
+          </mat-menu>
+
+        </div>
+
+      </mat-toolbar>
+
+      <!--  TABS -->
+
+      <div>
+
+        <div class="row">
+
+          <div class="col-12 text-black shadow-sm">
+
+            <mat-tab-group mat-align-tabs="start" class="bg-white">
+
+              <!--  TAB 1 -->
+
+              <mat-tab label="List of employees">
+
+                <div class="row w-100 bg-offwhite">
+
+                  <div class="col-12 p-5">
+
+                    <mat-card class="shadow px-5 pb-5 rounded-lg">
+
+                      <div class="row d-flex align-items-center">
+                        <div class="col-6">
+                          <mat-form-field class="w-100">
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Find an employee..." #input>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-1">
+                          <mat-icon class="align-middle text-grey" aria-hidden="false" aria-label="search">search
+                          </mat-icon>
+                        </div>
+                      </div>
+
+                      <table mat-table [dataSource]="employees" class="mat-elevation-z8 w-100 shadow">
+
+                        <ng-container matColumnDef="id">
+                          <th mat-header-cell *matHeaderCellDef>#</th>
+                          <td mat-cell *matCellDef="let employee">{{employee.id}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef>Name</th>
+                          <td mat-cell *matCellDef="let employee">{{employee.name}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="nif">
+                          <th mat-header-cell *matHeaderCellDef>NIF</th>
+                          <td mat-cell *matCellDef="let employee">{{employee.nif}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="email">
+                          <th mat-header-cell *matHeaderCellDef>Email</th>
+                          <td mat-cell *matCellDef="let employee">{{employee.email}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="date_birth">
+                          <th mat-header-cell *matHeaderCellDef>Date of Birth</th>
+                          <td mat-cell *matCellDef="let employee">{{employee.date_birth}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="actions">
+                          <th mat-header-cell *matHeaderCellDef>Actions</th>
+                          <td mat-cell *matCellDef="let employee">
+                            <button class="btn btn-sm bg-transparent" data-toggle="modal" data-target="#editModa"
+                              (click)="openEditDialog()">
+                              <i class="material-icons md-18 align-middle text-secondary">edit</i>
+                            </button>
+                            <button class="btn btn-sm bg-transparent" type="button" (click)="deleteEmployee()">
+                              <i class="material-icons md-18 align-middle text-red">remove_circle_outline</i>
+                            </button>
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        Row shown when there is no matching data.
+                        <tr class="mat-row" *matNoDataRow>
+                          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                        </tr>
+
+                      </table>
+
+                      <mat-paginator class="w-100 shadow" [pageSize]="5" showFirstLastButtons></mat-paginator>
+
+                    </mat-card>
+
+                  </div>
+
+                </div>
+
+              </mat-tab>
+
+              <!--  TAB 2 -->
+
+              <mat-tab label="Add new employee">
+
+                <form method="POST">
+
+                  <div class="row py-5 bg-offwhite w-100">
+
+                    <div class="col-12 px-5">
+
+                      <mat-card class="shadow rounded-lg p-5">
+
+                        <div class="row">
+                          <div class="col-6">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Name</mat-label>
+                              <input matInput placeholder="Name of the employee" type="text" #input required>
+                              <mat-icon matSuffix class="text-muted">account_box</mat-icon>
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-6">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Email</mat-label>
+                              <input matInput placeholder="email@example.com" [formControl]="email" required>
+                              <mat-icon matSuffix class="text-muted">alternate_email</mat-icon>
+                              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-3">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>NIF</mat-label>
+                              <input matInput #nif placeholder="NIF" maxlength="9" required>
+                              <mat-icon matSuffix class="text-muted">article</mat-icon>
+                              <mat-hint align="end">{{nif.value.length}} / 9</mat-hint>
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-3">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Phone number</mat-label>
+                              <input matInput #phone placeholder="Phone number" maxlength="9" type="tel">
+                              <mat-icon matSuffix class="text-muted">phone</mat-icon>
+                              <mat-hint align="end">{{phone.value.length}} / 9</mat-hint>
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-3">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Date of Birth</mat-label>
+                              <input matInput placeholder="Date of Birth" type="date">
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-3">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Contract start date</mat-label>
+                              <input matInput placeholder="Contract start date" type="date">
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-4">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Department</mat-label>
+                              <mat-select>
+                                <mat-option value="option1">Option 1</mat-option>
+                                <mat-option value="option2">Option 2</mat-option>
+                                <mat-option value="option3">Option 3</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-4">
+
+                            <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Schedule</mat-label>
+                              <mat-select>
+                                <mat-option value="option1">Option 1</mat-option>
+                                <mat-option value="option2">Option 2</mat-option>
+                                <mat-option value="option3">Option 3</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+
+                          </div>
+                          <div class="col-4 d-flex align-items-center">
+
+                            <mat-checkbox [formControl]="">Active</mat-checkbox>
+
+                          </div>
+                          <div class="col-3 offset-9 my-4">
+
+                            <button mat-icon-button type="submit" (click)="createEmployee(dataSource)"
+                              class="btn w-100 h-100 btn-black shadow-sm">
+                              Add employee
+                              <mat-icon>add</mat-icon>
+                            </button>
+
+                          </div>
+                        </div>
+
+                      </mat-card>
+
+
+                      <!--                       <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                      </mat-form-field> -->
+
+                    </div>
+
+                  </div>
+
+                </form>
+
+              </mat-tab>
+
+            </mat-tab-group>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </mat-drawer-content>
+
+  </mat-drawer-container>
+
+  <!-- 
   <div class="content w-75 h-100 ml-auto d-inline-block bg-light">
     <div class="row">
       <div class="col">
@@ -78,14 +379,14 @@
         </nav>
       </div>
 
-      <div class="col-12 text-black">
+     <div class="col-12 text-black">
         <h3 class="h3 border-top pt-5 px-5">List of employees</h3>
       </div>
 
       <div class="col-12 text-black">
         <div class="table-responsive p-5">
 
-          <table class="table table-striped table-hover border rounded-lg shadow bg-white">
+         <table class="table table-striped table-hover border rounded-lg shadow bg-white">
             <caption hidden>
               List of Employees
             </caption>
@@ -100,8 +401,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let employee of employees">
-                <th scope="row">#</th>
+              <tr *ngFor="let employee of employees" id="row" onclick="getRow(this)">
+                <th scope="row" id="id_counter"></th>
                 <td>{{ employee.name }}</td>
                 <td>{{ employee.nif }}</td>
                 <td>{{ employee.email }}</td>
@@ -118,54 +419,24 @@
             </tbody>
           </table>
 
-          <!-- table angular material -->
-          <!--           <mat-form-field>
-            <mat-label>Filter</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-          </mat-form-field>
-
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-            Position Column 
-            <ng-container matColumnDef="position">
-              <th mat-header-cell *matHeaderCellDef> No. </th>
-              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-            </ng-container>
-
-             Name Column 
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef> Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
-
-             Weight Column
-            <ng-container matColumnDef="weight">
-              <th mat-header-cell *matHeaderCellDef> Weight </th>
-              <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-            </ng-container>
-
-            Symbol Column
-            <ng-container matColumnDef="symbol">
-              <th mat-header-cell *matHeaderCellDef> Symbol </th>
-              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-            Row shown when there is no matching data.
-            <tr class="mat-row" *matNoDataRow>
-              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-            </tr>
-          </table> -->
-
+          <div class="row">
+            <div class="col-10">
+              <mat-form-field class="w-50 my-3">
+                <input matInput (keyup)="applyFilter($event)" placeholder="Find an employee..." #input>
+              </mat-form-field>
+              <mat-icon class="align-middle text-grey" aria-hidden="false" aria-label="search">search</mat-icon>
+            </div>
+            <div class="col-2 d-flex align-content-center justify-content-center">
+              <button mat-button class="btn-black">Basic</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Modal -->
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  <div class="modal fade p-5" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -176,12 +447,12 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form *ngFor="let employee of employees">
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                  <label for="exampleFormControlInput1">Name</label>
-                  <input type="text" class="form-control rounded-pill" id="nameEditModal">
+                  <label for="exampleFormControlInput1">Name{{ employee.name }}</label>
+                  <input type="text" class="form-control rounded-pill" id="nameEditModal" />
                 </div>
               </div>
               <div class="col-12">
@@ -206,9 +477,8 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-light text-white bg-grey rounded-pill"
-            data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-dark text-white bg-black rounded-pill">Save changes</button>
+          <button mat-button type="button" class="btn-grey w-25" data-dismiss="modal">Close</button>
+          <button mat-button type="button" class="btn-black w-50">Save changes</button>
         </div>
       </div>
     </div>

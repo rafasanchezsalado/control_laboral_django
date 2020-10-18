@@ -1,1 +1,64 @@
-<p>settings works!</p>
+<div class="container-fluid p-0 m-0">
+
+    <mat-drawer-container class="main-container">
+
+        <mat-drawer-content class="bg-light">
+
+            <!--  TOOLBAR (NAVBAR) -->
+
+            <mat-toolbar class="bg-black shadow-sm p-4">
+
+                <div class="ml-auto">
+
+                    <button mat-icon-button class="mx-4" aria-label="" [matMenuTriggerFor]="notificationMenu"
+                        xPosition="before" #tooltip="matTooltip" matTooltip="Notifications" aria-label="">
+                        <mat-icon class="text-light align-middle" matBadge="5" matBadgeColor="warn">notifications
+                        </mat-icon>
+                    </button>
+
+                    <mat-menu #notificationMenu="matMenu">
+                        <button mat-menu-item>Item 1</button>
+                    </mat-menu>
+
+                    <button mat-icon-button class="mx-4" aria-label="" [matMenuTriggerFor]="profileMenu"
+                        xPosition="before">
+                        <mat-icon class="text-light align-middle">person</mat-icon>
+                    </button>
+
+                    <mat-menu #profileMenu="matMenu">
+                        <button mat-menu-item>Item 1</button>
+                        <mat-slide-toggle mat-mat-menu-item class="mx-2">
+                            Dark Mode
+                            <mat-icon class="text-black align-middle">
+                                brightness_2
+                            </mat-icon>
+                        </mat-slide-toggle>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item>Log out</button>
+                    </mat-menu>
+
+                </div>
+
+            </mat-toolbar>
+
+            <!--  TABS -->
+
+            <div>
+
+                <div class="row">
+
+                    <div class="col-12 text-black shadow-sm">
+
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </mat-drawer-content>
+
+    </mat-drawer-container>
+
+</div>
